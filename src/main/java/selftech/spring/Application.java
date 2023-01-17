@@ -4,13 +4,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import selftech.spring.member.Gradle;
 import selftech.spring.member.Member;
+import selftech.spring.member.MemberService;
 import selftech.spring.member.MemberServiceImpl;
 
 @SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) {
-		MemberServiceImpl memberService = new MemberServiceImpl();
+
+		AppConfig appConfig = new AppConfig();
+		MemberService memberService = appConfig.memberService();
+
 		Member member = new Member(1L, "memberA", Gradle.VIP);
 		memberService.join(member);
 

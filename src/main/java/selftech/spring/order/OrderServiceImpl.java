@@ -2,14 +2,21 @@ package selftech.spring.order;
 
 import selftech.spring.discount.DiscountPolicy;
 import selftech.spring.discount.FixDiscountPolicy;
+import selftech.spring.discount.RateDiscountPolicy;
 import selftech.spring.member.Member;
 import selftech.spring.member.MemberRepository;
 import selftech.spring.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    //의존하고있고 바뀔때마다 계속 바꿔줘야함
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

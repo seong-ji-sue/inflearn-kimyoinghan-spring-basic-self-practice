@@ -2,6 +2,7 @@ package selftech.spring.order;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import selftech.spring.AppConfig;
 import selftech.spring.member.Gradle;
 import selftech.spring.member.Member;
 import selftech.spring.member.MemberService;
@@ -11,11 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceImplTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+//    MemberService memberService = new MemberServiceImpl();
+//    OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
 
     @Test
     void createOrder() {
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
         long memberId = 1L;
         Member member = new Member(memberId, "member", Gradle.VIP);
         memberService.join(member);
