@@ -1,11 +1,14 @@
 package selftech.spring.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 회원 저장소 기능 구현체
  */
+@Component
 public class MemoryMemberRepository implements MemberRepository{
 
     //회원 저장소

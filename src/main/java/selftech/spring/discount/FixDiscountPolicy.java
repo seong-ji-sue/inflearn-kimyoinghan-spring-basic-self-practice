@@ -1,7 +1,9 @@
 package selftech.spring.discount;
 
+import org.springframework.stereotype.Component;
 import selftech.spring.member.Gradle;
 import selftech.spring.member.Member;
+
 
 public class FixDiscountPolicy implements DiscountPolicy{
 

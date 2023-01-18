@@ -1,5 +1,6 @@
 package selftech.spring.discount;
 
+import org.springframework.stereotype.Component;
 import selftech.spring.member.Gradle;
 import selftech.spring.member.Member;
 
@@ -7,6 +8,7 @@ import selftech.spring.member.Member;
 /**
  * 할인정책
  */
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPolicy = 10;
