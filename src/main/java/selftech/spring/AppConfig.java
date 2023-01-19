@@ -10,7 +10,7 @@ import selftech.spring.member.MemoryMemberRepository;
 import selftech.spring.order.OrderService;
 import selftech.spring.order.OrderServiceImpl;
 
-@Configuration
+//@Configuration
 public class AppConfig {
 
     @Bean

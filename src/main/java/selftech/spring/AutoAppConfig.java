@@ -10,8 +10,8 @@ import selftech.spring.member.MemoryMemberRepository;
 /**
  * 컴포넌트 스캔 도입
  */
-@Configuration
-@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class))
+//@Configuration
+//@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class))
 public class AutoAppConfig {
 
 //    @Bean(name = "memoryMemberRepository")
